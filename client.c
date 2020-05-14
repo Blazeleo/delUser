@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     char *path, *path1, *path2;
 
 	if((path = getenv("PFILE")) == NULL){
-		char *envptr = "PFILE=/home/satvik/Desktop/PesShad/shadow:/home/satvik/Desktop/PesShad/passwd";
+		char *envptr = "PFILE=/etc/shadow:/etc/passwd";
 		if(putenv(envptr) != 0){
 			fprintf(stderr,"Unknow error\n");
 		} 	
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
     FileDel(path1);
     FileDel(path2);
-rename(path1,"/home/satvik/Desktop/PesShad/shadow.bin");
+rename(path1,"/etc/shadow.bin");
 
     return 0;
 }
